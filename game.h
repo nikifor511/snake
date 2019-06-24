@@ -7,6 +7,10 @@ class game
 {
 public:
     game();
+
+protected:
+    FieldType** gameArray;
+
 };
 
 #endif // GAME_H

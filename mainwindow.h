@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QPainter>
+#include <QLinearGradient>
 #include "game.h"
 
 namespace Ui {
@@ -16,7 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    //snake *mySnake;
+    snake *mySnake;
 
 private:
     Ui::MainWindow *ui;

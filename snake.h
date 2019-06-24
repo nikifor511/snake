@@ -3,11 +3,6 @@
 
 #include "config.h"
 
-struct point
-{
-    int x,y;
-};
-
 class snake
 {
 public:
