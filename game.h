@@ -2,14 +2,17 @@
 #define GAME_H
 
 #include "snake.h"
+#include <QDebug>
 
 class game
 {
 public:
     game();
+    void fill_gameArray();
 
 protected:
-    FieldType** gameArray;
+    FType **gameArray;
+    snake *mySnake;
 
 };
 

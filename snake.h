@@ -8,10 +8,11 @@ class snake
 public:
     snake(int length, point head, unsigned char direction);
     int get_length();
+    point snakeArray[15];
 
 protected:
     int length;
-    point snakeArray[15];
+
     unsigned char direction;
 
 };

@@ -42,20 +42,6 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 void MainWindow::on_pushButton_clicked()
 {
-    point h;
-    h.x = 15;
-    h.y = 7;
-//    A[0].x = 2;
-//    A[0].y = 2;
-//    A[1].x = 2;
-//    A[1].y = 3;
-//    A[2].x = 2;
-//    A[2].y = 4;
-
-    snake mySnake  = snake(8, h, 3);
     game myGame = game();
-
     int f = 9;
-
-
 }

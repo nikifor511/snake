@@ -17,7 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    snake *mySnake;
+    game *myGame;
 
 private:
     Ui::MainWindow *ui;
