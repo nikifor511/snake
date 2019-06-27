@@ -26,18 +26,23 @@ void MainWindow::paintEvent(QPaintEvent *event)
     linearGrad.setColorAt(0, Qt::white);
     linearGrad.setColorAt(0.5, Qt::green);
     linearGrad.setColorAt(1, Qt::black);
-
     painter.setBrush(linearGrad);
-    int i;
-    for (i=0; i<=area_width; i++)
+
+    for (int i=0; i<=area_width; i++)
         painter.drawLine(area_delta + i*cell_width, area_delta, area_delta + i*cell_width, area_delta + area_height*cell_height);
-    for (i=0; i<=area_height; i++)
+    for (int i=0; i<=area_height; i++)
         painter.drawLine(area_delta, area_delta + i*cell_height, area_delta + area_width*cell_width, area_delta + i*cell_height);
 //    for (i=0; i<mySnake->get_length(); i++)
 //        painter.drawEllipse(area_delta + () )
-    painter.drawEllipse(10,10,100,170);
 
+    if (&myGame != nullptr)
+        for (int i=0; i<area_width; i++)
+            for (int j=0; j<area_height; j++)
+            {
+                if (myGame->gameArray[i][j] == Snake_M)
+                    painter.drawEllipse(area_delta + i*cell_width, area_delta + j*cell_height, area_delta + (i+1)*cell_width,  area_delta + (j+1)*cell_height);
 
+            }
 }
 
 void MainWindow::on_pushButton_clicked()

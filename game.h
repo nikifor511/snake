@@ -11,9 +11,10 @@ public:
     void fill_gameArray();
     snake *mySnake;
     QList<snake> enemySnakes;
+    FType **gameArray;
 
 protected:
-    FType **gameArray;
+
 
 
 };
