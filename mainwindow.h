@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QLinearGradient>
 #include "game.h"
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void slotTimerAlarm();
 
 protected:
     void paintEvent(QPaintEvent *event);

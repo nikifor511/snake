@@ -9,10 +9,12 @@ class game
 public:
     game();
     void fill_gameArray();
+    snake *mySnake;
+    QList<snake> enemySnakes;
 
 protected:
     FType **gameArray;
-    snake *mySnake;
+
 
 };
 

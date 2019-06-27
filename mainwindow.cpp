@@ -42,6 +42,15 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 void MainWindow::on_pushButton_clicked()
 {
-    game myGame = game();
-    int f = 9;
+    myGame = new game();
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
+    timer->start(500);
+}
+
+void MainWindow::slotTimerAlarm()
+{
+
+    myGame->fill_gameArray();
+    repaint();
 }
