@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QLinearGradient>
 #include "game.h"
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -17,10 +18,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    snake *mySnake;
+    game *myGame;
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void slotTimerAlarm();
 
 protected:
     void paintEvent(QPaintEvent *event);

@@ -6,7 +6,7 @@ struct point
     int x,y;
 };
 
-enum FieldType { Snake_M, Snake_A, Food, Empty };
+enum FType { Snake_M, Snake_A, Food, Empty };
 
 const int area_delta = 20;
 const int area_width = 30;

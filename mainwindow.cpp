@@ -26,36 +26,36 @@ void MainWindow::paintEvent(QPaintEvent *event)
     linearGrad.setColorAt(0, Qt::white);
     linearGrad.setColorAt(0.5, Qt::green);
     linearGrad.setColorAt(1, Qt::black);
-
     painter.setBrush(linearGrad);
-    int i;
-    for (i=0; i<=area_width; i++)
+
+    for (int i=0; i<=area_width; i++)
         painter.drawLine(area_delta + i*cell_width, area_delta, area_delta + i*cell_width, area_delta + area_height*cell_height);
-    for (i=0; i<=area_height; i++)
+    for (int i=0; i<=area_height; i++)
         painter.drawLine(area_delta, area_delta + i*cell_height, area_delta + area_width*cell_width, area_delta + i*cell_height);
 //    for (i=0; i<mySnake->get_length(); i++)
 //        painter.drawEllipse(area_delta + () )
-    painter.drawEllipse(10,10,100,170);
 
+    if (&myGame != nullptr)
+        for (int i=0; i<area_width; i++)
+            for (int j=0; j<area_height; j++)
+            {
+                if (myGame->gameArray[i][j] == Snake_M)
+                    painter.drawEllipse(area_delta + i*cell_width, area_delta + j*cell_height, area_delta + (i+1)*cell_width,  area_delta + (j+1)*cell_height);
 
+            }
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    point h;
-    h.x = 15;
-    h.y = 7;
-//    A[0].x = 2;
-//    A[0].y = 2;
-//    A[1].x = 2;
-//    A[1].y = 3;
-//    A[2].x = 2;
-//    A[2].y = 4;
+    myGame = new game();
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
+    timer->start(500);
+}
 
-    snake mySnake  = snake(8, h, 3);
-    game myGame = game();
+void MainWindow::slotTimerAlarm()
+{
 
-    int f = 9;
-
-
+    myGame->fill_gameArray();
+    repaint();
 }
